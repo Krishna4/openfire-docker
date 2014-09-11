@@ -1,6 +1,26 @@
 from ubuntu:12.04
 
+MAINTAINER "https://github.com/Krishna4"
+
+#installing Java
+add-apt-repository -y ppa:webupd8team/java
+apt-get update
+debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+apt-get -y install oracle-java7-installer 
+
 
 wget -O openfire.deb http://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_3.8.2_all.deb
 
 dpkg --install openfire_3.8.2_all.deb
+
+EXPOSE 5222	
+EXPOSE 5223
+EXPOSE 8080
+EXPOSE 8443
+EXPOSE 7777
+EXPOSE 80
+EXPOSE 443
+EXPOSE 3478 
+EXPOSE 3479
+EXPOSE 5229		
