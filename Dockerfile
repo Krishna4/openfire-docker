@@ -3,16 +3,16 @@ from ubuntu:12.04
 MAINTAINER "https://github.com/Krishna4"
 
 #installing Java
-add-apt-repository -y ppa:webupd8team/java
-apt-get update
-debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-apt-get -y install oracle-java7-installer 
+RUN add-apt-repository -y ppa:webupd8team/java
+RUN apt-get update
+RUN debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+RUN debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+RUN apt-get -y install oracle-java7-installer 
 
 
-wget -O openfire.deb http://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_3.8.2_all.deb
+RUN wget -O openfire.deb http://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_3.8.2_all.deb
 
-dpkg --install openfire.deb
+RUN dpkg --install openfire.deb
 
 EXPOSE 5222	
 EXPOSE 5223
