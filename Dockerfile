@@ -12,7 +12,7 @@ apt-get -y install oracle-java7-installer
 
 wget -O openfire.deb http://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_3.8.2_all.deb
 
-dpkg --install openfire_3.8.2_all.deb
+dpkg --install openfire.deb
 
 EXPOSE 5222	
 EXPOSE 5223
