@@ -3,7 +3,7 @@ from ubuntu:12.04
 MAINTAINER "https://github.com/Krishna4"
 
 #installing Java
-RUN add-apt-repository -y ppa:webupd8team/java
+RUN add-apt-repository -y ppa:webupd8team/java -y
 RUN apt-get update
 RUN debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 RUN debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
